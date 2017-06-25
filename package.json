@@ -1,0 +1,23 @@
+{
+  "name": "iced-react-compgen",
+  "version": "1.0.0",
+  "description": "A simple and interactive component generator for cjsx code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "iced -c -o lib/ src/iced-react-compgen.iced"
+  },
+  "bin": {
+    "iced-react-compgen": "bin/iced-react-compgen.js"
+  },
+  "keywords": [
+    "react",
+    "coffee-script"
+  ],
+  "author": "dannynpmjs",
+  "license": "MIT",
+  "dependencies": {
+    "iced-coffee-script": "^108.0.11",
+    "mkdirp": "^0.5.1"
+  }
+}
