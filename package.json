@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "iced -c -o lib/ src/iced-react-compgen.iced"
+    "build": "iced -c -o bin/ src/iced-react-compgen.iced"
   },
   "bin": {
     "iced-react-compgen": "bin/iced-react-compgen.js"

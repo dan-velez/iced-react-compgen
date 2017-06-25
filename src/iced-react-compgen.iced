@@ -16,7 +16,7 @@ class IRCompGen
       input: process.stdin
       output: process.stdout
 
-  runInteractive: =>
+  run: =>
     await @rl.question @prompts.componentName, defer componentName
     out 'Generating', componentName, '...'
     componentString = @genComponent componentName
@@ -30,7 +30,7 @@ class IRCompGen
     @writeFile filename, componentString
     @rl.close()
 
-  writeFile: (filename, string)->
+  writeFile: (filename, string)=>
     await fs.writeFile filename, string, defer err
     if err
       out 'Dir does not exist, creating', path.dirname filename
@@ -53,7 +53,7 @@ class IRCompGen
     module.exports = #{componentName}
     """
 
-  confirmWrite: (filename, callb)->
+  confirmWrite: (filename, callb)=>
     await @rl.question "Confirm write to #{filename}[yn]: ", defer resp
     resp = resp.toLowerCase().trim()
     if resp.startsWith 'y' then return callb true
@@ -63,4 +63,4 @@ class IRCompGen
   genFileName: (dirname, component)->
     path.resolve './'+dirname+'/'+component+'.iced'
 
-new IRCompGen().runInteractive()
+new IRCompGen().run()

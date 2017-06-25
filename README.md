@@ -1,6 +1,6 @@
 ## Installation
 ```
-> npm i -g iced-reat-compgen
+> npm i -g iced-react-compgen
 ```
 
 ## Usage
